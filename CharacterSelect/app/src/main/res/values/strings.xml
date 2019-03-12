@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CharacterSelect</string>
+
+    <string name="Warrior">Warrior</string>
+    <string name="Mage">Mage</string>
+    <string name="Healer">Healer</string>
+    <string name="Hunter">Hunter</string>
+    <string name="Paladin">Paladin</string>
+    
+    <string name="Strength">Strength</string>
+    <string name="Intellect">Intellect</string>
+    <string name="Wisdom">Wisdom</string>
+    <string name="Dexterity">Dexterity</string>
 </resources>
