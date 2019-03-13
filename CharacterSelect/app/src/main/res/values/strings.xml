@@ -11,4 +11,6 @@
     <string name="Intellect">Intellect</string>
     <string name="Wisdom">Wisdom</string>
     <string name="Dexterity">Dexterity</string>
+
+    <string name="Null">null</string>
 </resources>
