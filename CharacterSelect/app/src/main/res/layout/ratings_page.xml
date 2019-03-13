@@ -133,4 +133,30 @@
         app:layout_constraintStart_toEndOf="@+id/DexterityText"
         app:layout_constraintTop_toBottomOf="@+id/WisdomRtgBar" />
 
+    <TextView
+        android:id="@+id/StaticPointsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Points"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PointsText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DexterityRtgBar" />
+
+    <TextView
+        android:id="@+id/PointsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StaticPointsText"
+        app:layout_constraintTop_toBottomOf="@+id/DexterityRtgBar" />
+
 </android.support.constraint.ConstraintLayout>
