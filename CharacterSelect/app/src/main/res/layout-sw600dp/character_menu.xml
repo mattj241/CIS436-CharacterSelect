@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/warriorMenuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Warrior"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/mageMenuText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mageMenuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Mage"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/healerManuText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warriorMenuText" />
+
+    <TextView
+        android:id="@+id/healerManuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Healer"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/hunterMenuText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mageMenuText" />
+
+    <TextView
+        android:id="@+id/hunterMenuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Hunter"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/paladinMenuText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/healerManuText" />
+
+    <TextView
+        android:id="@+id/paladinMenuText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Paladin"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hunterMenuText" />
 
 </android.support.constraint.ConstraintLayout>
