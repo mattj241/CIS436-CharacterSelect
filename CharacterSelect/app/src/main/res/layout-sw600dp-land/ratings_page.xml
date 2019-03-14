@@ -1,6 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/CharatcterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/Null"
+        android:textAlignment="center"
+        android:textSize="64sp"
+        app:layout_constraintBottom_toTopOf="@+id/StaticPointsText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/StrengthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Strength"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/IntellectRtgBar"
+        app:layout_constraintEnd_toStartOf="@+id/StrengthRtgBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CharatcterTitle"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <RatingBar
+        android:id="@+id/StrengthRtgBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/IntellectRtgBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StrengthText"
+        app:layout_constraintTop_toBottomOf="@+id/CharatcterTitle" />
+
+    <TextView
+        android:id="@+id/IntellectText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Intellect"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/WisdomRtgBar"
+        app:layout_constraintEnd_toStartOf="@+id/IntellectRtgBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StrengthRtgBar" />
+
+    <RatingBar
+        android:id="@+id/IntellectRtgBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/WisdomRtgBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/IntellectText"
+        app:layout_constraintTop_toBottomOf="@+id/StrengthRtgBar" />
+
+    <TextView
+        android:id="@+id/WisdomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Wisdom"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/DexterityRtgBar"
+        app:layout_constraintEnd_toStartOf="@+id/WisdomRtgBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IntellectRtgBar" />
+
+    <RatingBar
+        android:id="@+id/WisdomRtgBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:stepSize="1"
+        app:layout_constraintBottom_toTopOf="@+id/DexterityRtgBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/WisdomText"
+        app:layout_constraintTop_toBottomOf="@+id/IntellectRtgBar" />
+
+    <TextView
+        android:id="@+id/DexterityText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Dexterity"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/DexterityRtgBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WisdomRtgBar" />
+
+    <RatingBar
+        android:id="@+id/DexterityRtgBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="8dp"
+        android:stepSize="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/DexterityText"
+        app:layout_constraintTop_toBottomOf="@+id/WisdomRtgBar" />
+
+    <TextView
+        android:id="@+id/StaticPointsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Points"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/PointsText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DexterityRtgBar"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <TextView
+        android:id="@+id/PointsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="200dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/Null"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StaticPointsText"
+        app:layout_constraintTop_toBottomOf="@+id/DexterityRtgBar"
+        app:layout_constraintVertical_bias="0.75"
+        tools:text="10" />
 
 </android.support.constraint.ConstraintLayout>

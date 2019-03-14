@@ -29,14 +29,14 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        CharacterName = this.getArguments().getString("characterType");
         prefs = getActivity().getSharedPreferences(appName, Context.MODE_PRIVATE);
         lastStrengthRating = prefs.getInt(String.format("%s/%s", CharacterName, strengthString), 0);
         lastWisdomRating = prefs.getInt(String.format("%s/%s", CharacterName, wisdomString), 0);
         lastIntellectRating = prefs.getInt(String.format("%s/%s", CharacterName, intellectString), 0);
         lastDexterityRating = prefs.getInt(String.format("%s/%s", CharacterName, dexterityString), 0);
-        int total = getRatingsTotal(lastStrengthRating, lastWisdomRating, lastIntellectRating, lastWisdomRating);
+        int total = getRatingsTotal(lastStrengthRating, lastWisdomRating, lastIntellectRating, lastDexterityRating);
 
-        CharacterName = this.getArguments().getString("characterType");
         View view = inflater.inflate(R.layout.ratings_page, container, false);
         Title = view.findViewById(R.id.CharatcterTitle);
         Title.setText(CharacterName);
@@ -62,12 +62,21 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        lastStrengthRating = prefs.getInt(String.format("%s/%s", CharacterName, strengthString), 0);
+        lastWisdomRating = prefs.getInt(String.format("%s/%s", CharacterName, wisdomString), 0);
+        lastIntellectRating = prefs.getInt(String.format("%s/%s", CharacterName, intellectString), 0);
+        lastDexterityRating = prefs.getInt(String.format("%s/%s", CharacterName, dexterityString), 0);
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
-        prefs.edit().putInt(String.format("%s/%s", CharacterName, strengthString), lastStrengthRating).apply();
-        prefs.edit().putInt(String.format("%s/%s", CharacterName, wisdomString), lastWisdomRating).apply();
-        prefs.edit().putInt(String.format("%s/%s", CharacterName, intellectString), lastIntellectRating).apply();
-        prefs.edit().putInt(String.format("%s/%s", CharacterName, dexterityString), lastDexterityRating).apply();
+        prefs.edit().putInt(String.format("%s/%s", CharacterName, strengthString), lastStrengthRating).commit();
+        prefs.edit().putInt(String.format("%s/%s", CharacterName, wisdomString), lastWisdomRating).commit();
+        prefs.edit().putInt(String.format("%s/%s", CharacterName, intellectString), lastIntellectRating).commit();
+        prefs.edit().putInt(String.format("%s/%s", CharacterName, dexterityString), lastDexterityRating).commit();
     }
 
     public int getRatingsTotal(int strength, int wisdom, int intellect, int dexterity){
@@ -157,7 +166,7 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
                 Toast.makeText(this.getContext(), "Uh-oh", Toast.LENGTH_LONG).show();
                 break;
         }
-        prefs.edit().putInt(key, newStarAmount).apply();
+        //prefs.edit().putInt(key, newStarAmount).apply();
         String newTotal = String.valueOf(MAX_POINTS - localTotal);
         PointsText.setText(newTotal);
     }

@@ -2,6 +2,7 @@ package com.umd.baugh.characterselect;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 public class CharacterMenuFragment extends Fragment implements View.OnClickListener {
     TextView warrior, healer, mage, hunter, paladin;
     View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,37 +37,67 @@ public class CharacterMenuFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        boolean isTablet = false;
+        if ((getResources().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK) >=
+                Configuration.SCREENLAYOUT_SIZE_LARGE){
+            isTablet = true;
+        }
         Intent intent = new Intent(view.getContext(), RatingsActivity.class);
         Bundle params = new Bundle();
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.WarriorMenuText:
-                params.putString("characterType", "Warrior");
-                intent.putExtras(params);
-                startActivity(intent);
+                if (isTablet){
+                    ((MainActivity)getActivity()).handleTabletFragmentSwitches("Warrior");
+                }
+                else {
+                    params.putString("characterType", "Warrior");
+                    intent.putExtras(params);
+                    startActivity(intent);
+                }
                 break;
             case R.id.HealerManuText:
-                params.putString("characterType", "Healer");
-                intent.putExtras(params);
-                startActivity(intent);
+                if (isTablet){
+                    ((MainActivity)getActivity()).handleTabletFragmentSwitches("Healer");
+                }
+                else {
+                    params.putString("characterType", "Healer");
+                    intent.putExtras(params);
+                    startActivity(intent);
+                }
                 break;
             case R.id.MageMenuText:
-                params.putString("characterType", "Mage");
-                intent.putExtras(params);
-                startActivity(intent);
+                if (isTablet){
+                    ((MainActivity)getActivity()).handleTabletFragmentSwitches("Mage");
+                }
+                else {
+                    params.putString("characterType", "Mage");
+                    intent.putExtras(params);
+                    startActivity(intent);
+                }
                 break;
             case R.id.HunterMenuText:
-                params.putString("characterType", "Hunter");
-                intent.putExtras(params);
-                startActivity(intent);
+                if (isTablet){
+                    ((MainActivity)getActivity()).handleTabletFragmentSwitches("Hunter");
+                }
+                else {
+                    params.putString("characterType", "Hunter");
+                    intent.putExtras(params);
+                    startActivity(intent);
+                }
                 break;
             case R.id.PaladinMenuText:
-                params.putString("characterType", "Paladin");
-                intent.putExtras(params);
-                startActivity(intent);
+                if (isTablet){
+                    ((MainActivity)getActivity()).handleTabletFragmentSwitches("Paladin");
+                }
+                else {
+                    params.putString("characterType", "Paladin");
+                    intent.putExtras(params);
+                    startActivity(intent);
+                }
                 break;
             default:
                 Toast.makeText(view.getContext(), "Uh oh", Toast.LENGTH_SHORT);
         }
-
     }
 }

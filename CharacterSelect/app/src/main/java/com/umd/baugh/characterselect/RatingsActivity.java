@@ -26,12 +26,4 @@ public class RatingsActivity extends AppCompatActivity {
                 .add(R.id.ratingsContainer, ratingsFragment)
                 .commit();
     }
-
-//    Bundle bundle = new Bundle();
-//    String myMessage = "Stackoverflow is cool!";
-//bundle.putString("message", myMessage );
-//    FragmentClass fragInfo = new FragmentClass();
-//fragInfo.setArguments(bundle);
-//transaction.replace(R.id.fragment_single, fragInfo);
-//transaction.commit();
 }
