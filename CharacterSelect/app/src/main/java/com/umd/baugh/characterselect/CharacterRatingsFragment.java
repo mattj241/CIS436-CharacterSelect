@@ -37,6 +37,7 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
         lastDexterityRating = prefs.getInt(String.format("%s/%s", CharacterName, dexterityString), 0);
         int total = getRatingsTotal(lastStrengthRating, lastWisdomRating, lastIntellectRating, lastDexterityRating);
 
+
         View view = inflater.inflate(R.layout.ratings_page, container, false);
         Title = view.findViewById(R.id.CharatcterTitle);
         Title.setText(CharacterName);
@@ -100,7 +101,7 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
                         lastIntellectRating, lastDexterityRating);
                 if (localTotal > MAX_POINTS){
                     Toast.makeText(this.getContext(),
-                            String.format("that %s rating exceeds the player limit of 10", strengthString),
+                            String.format("The %s rating exceeds the stat limit", strengthString),
                             Toast.LENGTH_LONG).show();
                 }
                 else {
@@ -117,7 +118,7 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
                         lastIntellectRating, lastDexterityRating);
                 if (localTotal > MAX_POINTS){
                     Toast.makeText(this.getContext(),
-                            String.format("that %s rating exceeds the player limit of 10", wisdomString),
+                            String.format("The %s rating exceeds the stat limit", wisdomString),
                             Toast.LENGTH_LONG).show();
                 }
                 else {
@@ -134,7 +135,7 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
                         newIntellectRating, lastDexterityRating);
                 if (localTotal > MAX_POINTS){
                     Toast.makeText(this.getContext(),
-                            String.format("that %s rating exceeds the player limit of 10", intellectString),
+                            String.format("The %s rating exceeds the stat limit", intellectString),
                             Toast.LENGTH_LONG).show();
                 }
                 else {
@@ -151,7 +152,7 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
                         lastIntellectRating, newDexterityRating);
                 if (localTotal > MAX_POINTS){
                     Toast.makeText(this.getContext(),
-                            String.format("that %s rating exceeds the player limit of 10", dexterityString),
+                            String.format("The %s rating exceeds the stat limit", dexterityString),
                             Toast.LENGTH_LONG).show();
                 }
                 else {

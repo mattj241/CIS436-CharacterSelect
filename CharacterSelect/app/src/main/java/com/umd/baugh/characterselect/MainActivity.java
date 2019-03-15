@@ -15,13 +15,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LaunchFragment();
+        //if (savedInstanceState == null) {
+            LaunchFragment();
+        //}
     }
 
     public void LaunchFragment() {
         CharacterMenuFragment firstFragment = new CharacterMenuFragment();
         FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction().add(R.id.containerLayout, firstFragment).commit();
+        fm.beginTransaction().replace(R.id.containerLayout, firstFragment).commit();
         if ((getResources().getConfiguration().screenLayout &
                 Configuration.SCREENLAYOUT_SIZE_MASK) >=
                 Configuration.SCREENLAYOUT_SIZE_LARGE) {

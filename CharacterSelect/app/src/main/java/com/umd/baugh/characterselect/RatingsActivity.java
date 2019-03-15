@@ -23,7 +23,7 @@ public class RatingsActivity extends AppCompatActivity {
         ratingsFragment.setArguments(params);
         FragmentManager fragMngr = getSupportFragmentManager();
         fragMngr.beginTransaction()
-                .add(R.id.ratingsContainer, ratingsFragment)
+                .replace(R.id.ratingsContainer, ratingsFragment)
                 .commit();
     }
 }
