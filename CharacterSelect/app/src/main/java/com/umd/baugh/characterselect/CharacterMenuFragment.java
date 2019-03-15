@@ -14,6 +14,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//This is the main fragment class handler.
+// It handles the TextView onClicks differently on smaller screen sizes vs.
+// larger screen sizes. More below.
 public class CharacterMenuFragment extends Fragment implements View.OnClickListener {
     TextView warrior, healer, mage, hunter, paladin;
     View view;
@@ -35,6 +38,10 @@ public class CharacterMenuFragment extends Fragment implements View.OnClickListe
         return view;
     }
 
+    //Throughout this switch case:
+    // IF (large screen size)
+    // THEN handle fragment switching in main activity
+    // ELSE a new intent and activity is launched
     @Override
     public void onClick(View v) {
         boolean isTablet = false;

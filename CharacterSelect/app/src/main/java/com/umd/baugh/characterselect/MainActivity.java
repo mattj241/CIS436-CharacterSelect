@@ -1,26 +1,28 @@
 package com.umd.baugh.characterselect;
 
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.widget.Toast;
 
+/*
+ * Author: Matthew London
+ * Professor: John P. Baugh
+ * Class: CIS 436
+ * Project: Character Select - Project 2
+ * */
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //if (savedInstanceState == null) {
-            LaunchFragment();
-        //}
+        launchMainFragment();
     }
 
-    public void LaunchFragment() {
+    //Automatically call the main fragment in the main activity, not dependent on screen size
+    public void launchMainFragment() {
         CharacterMenuFragment firstFragment = new CharacterMenuFragment();
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction().replace(R.id.containerLayout, firstFragment).commit();
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Only on Tablets do we load both fragments in the Main activity.
+    //This called if the screen resources are bigger than "SCREENLAYOUT_SIZE_LARGE"
     public void handleTabletFragmentSwitches(String characterType) {
         Bundle params = new Bundle();
         switch (characterType) {

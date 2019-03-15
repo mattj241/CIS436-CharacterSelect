@@ -13,6 +13,12 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+//Heavy amount of variables indicate the amount of preferences that must be stored here.
+//There is a "last known value" and "newly known value" for every stat. The last known value
+//is loaded upon every fragment onCreateView/onResume. All preferences are written in the onStop
+//
+//If the a stat gets a new rating, and said rating sets total above 10 points,
+// the stat is reset to the last known value
 public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRatingBarChangeListener {
     RatingBar strength, intellect, wisdom, dexterity;
     TextView Title, PointsText;
@@ -87,10 +93,6 @@ public class CharacterRatingsFragment extends Fragment implements RatingBar.OnRa
 
     @Override
     public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-//        int s = prefs.getInt(String.format("%s/%s", CharacterName, strengthString), 0);
-//        int w = prefs.getInt(String.format("%s/%s", CharacterName, wisdomString), 0);
-//        int i = prefs.getInt(String.format("%s/%s", CharacterName, intellectString), 0);
-//        int d = prefs.getInt(String.format("%s/%s", CharacterName, dexterityString), 0);
         String key = null;
         int localTotal = 0;
         int newStarAmount = Math.round(ratingBar.getRating());
